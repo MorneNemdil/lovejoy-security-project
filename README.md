@@ -1,4 +1,4 @@
-# G6077 - Lovejoy's Secure Antique Evaluation Application
+# Lovejoy Secure Antique Evaluation Application
 
 ## 🛡️ Project Overview
 
