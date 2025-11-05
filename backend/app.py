@@ -235,13 +235,13 @@ def reset_password():
         return jsonify({"error": "Invalid token"}), 400
     
     if user.reset_token_expiry < datetime.utcnow():
-        # Invalidate the expired token
+        # invalidate the expired token
         user.reset_token = None
         user.reset_token_expiry = None
         db.session.commit()
         return jsonify({"error": "Token has expired"}), 400
 
-    # check new password strength (REUSING YOUR FUNCTION)
+    # check new password strength
     is_strong, message = is_password_strong(new_password)
     if not is_strong:
         return jsonify({"error": message}), 400
