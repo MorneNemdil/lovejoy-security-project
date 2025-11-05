@@ -143,7 +143,7 @@ def register():
     # the password is going to be hashed by the __init__ method in the User class
     try:
         is_admin_flag = False
-        if data.get('email') == 'admin@lovejoy.com':
+        if data.get('email') == 'admin@lovejoy.com': # admin role applied only for this user
             is_admin_flag = True
         
         new_user = User(
