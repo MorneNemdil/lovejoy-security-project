@@ -54,7 +54,7 @@ class User (db.Model):
         self.name = name
         self.email = email
         self.phone = phone
-        # hashing the password on creation
+        # hashing the password on creation, this also applies salt
         self.password = bcrypt.generate_password_hash(password).decode('utf-8')
         self.is_admin = is_admin
         
@@ -113,7 +113,7 @@ def is_password_strong(password):
 
     return True, "Password is strong."
       
-# -- API ENDPOINTS --
+# =========== API ENDPOINTS ==============
   
 # test endpoint to make sure api is running
 @app.route('/api/test', methods=['GET'])
